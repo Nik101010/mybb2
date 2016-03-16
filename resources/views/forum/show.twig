@@ -45,7 +45,7 @@
 					</div>
 				</section>
 			{% endif %}
-			
+
 			<div class="page-controls">
 				{{ topics.render|raw }}
 				<div class="page-buttons">
@@ -136,7 +136,7 @@
 									<span class="post__author">
                                         {{ render_profile_link(topic.lastPost.author) }}
                                     </span>
-									{{ post_date_link(url_route('topics.last', [topic.slug, topic.id]), topic.lastPost.created_at) }}
+									{{ post_date_link(url_route('topics.last', {'slug': topic.slug, 'id': topic.id}), topic.lastPost.created_at) }}
 								</p>
 							</div>
 							<!-- this needs to be hidden if user is not a moderator -->
@@ -165,7 +165,7 @@
 					{{ form_button('<span class="text">'~trans('forum.sorttopics')~'</span>', {'type': 'submit', 'class': 'button'}) }}
 				</div>
 				{{ form_close() }}
-				
+
 			</section>
 			{{ topics.render|raw }}
 			{% include 'partials.moderation.moderation_bar' with {'moderations': forum.moderations, 'moderation_content': 'topics'} %}

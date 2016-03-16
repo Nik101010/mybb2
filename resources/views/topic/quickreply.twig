@@ -30,7 +30,7 @@
 						<!-- <button type="submit" class="button button--secondary">
 							<i class="fa fa-paperclip"></i><span class="text">Attach Files</span>
 						</button>-->
-						<a href="{{ url_route('topics.reply', [topic.slug, topic.id]) }}" class="button button--secondary"
+						<a href="{{ url_route('topics.reply', {'slug': topic.slug, 'id': topic.id}) }}" class="button button--secondary"
 						   onclick="return submitFormAsGet('quickreply');">
 							<i class="fa fa-edit"></i>
 							<span class="text">{{ trans('general.preview') }}</span>
